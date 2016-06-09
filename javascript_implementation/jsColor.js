@@ -135,7 +135,7 @@
 							colorPickerUI = (colorPicker ? colorPicker.nodes.colorPicker : undefined),
 							animationSpeed = colorPicker ? colorPicker.color.options.animationSpeed : 0,
 							isColorPicker = colorPicker && (function(elm) {
-								while (elm) {
+								while (elm && elm instanceof HTMLElement) {
 									if ((elm.className || '').indexOf('cp-app') !== -1) return elm;
 									elm = elm.parentNode;
 								}
